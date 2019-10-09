@@ -7,6 +7,12 @@
 using namespace std;
 
 class Defender : public Fantasy {
+
+	friend ostream& operator<< (ostream& os, const Defender& d)
+	{
+
+	}
+
 public:
 
 	Defender();
@@ -18,6 +24,8 @@ public:
 	void winAerial();
 	void makeEffectiveClearance();
 	void cleanSheet();
+
+	void showPlayerName() { cout << playerName << endl; }
 
 private:
 	double totalScore;

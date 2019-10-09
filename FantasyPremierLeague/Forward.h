@@ -19,6 +19,8 @@ public:
 	void makeEffectiveClearance();
 	void cleanSheet();
 
+	void showPlayerName() { cout << playerName << endl; }
+
 private:
 	double totalScore;
 	string playerName;
