@@ -11,6 +11,7 @@ public:
 
 	Forward();
 	Forward(string name);
+	//~Forward() { delete this; }
 
 	void scoreGoal();
 	void makeAssist();

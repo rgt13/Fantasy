@@ -11,6 +11,7 @@ public:
 
 	Midfielder();
 	Midfielder(string name);
+	//~Midfielder() { delete this; }
 
 	void scoreGoal();
 	void makeAssist();

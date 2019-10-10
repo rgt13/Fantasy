@@ -24,9 +24,11 @@ public:
 		cout << "Your team name is '" << teamName << "'\n\n";
 	}
 
+	//~Player() { delete this; }
+
 	void showTotalScore();
 
-	void createTeam()   { this->team = this->team->createTeam(); }
+	void createTeam()   { this->team->createTeam(); }
 	void populateTeam() { this->team->populateTeam(); }
 	void displayTeam()  { this->team->displayTeam(); }
 

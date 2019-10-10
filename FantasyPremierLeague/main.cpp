@@ -7,21 +7,18 @@
 #include "Midfielder.h"
 #include "Defender.h"
 #include "Goalkeeper.h"
-#include "Team.h";
+#include "Team.h"
 #include "Player.h"	
 
 using namespace std;
 
 int main()
 {
-	
-	Team* team = new Team("FekirWrightInDebuchy");		// Create empty team
+	Player p("FekirWrightInDebuchy");
 
-	team = team->createTeam();
+	p.createTeam();
+	p.populateTeam();
+	p.displayTeam();
 
-	team->populateTeam();
-
-	team->displayTeam();
-	
 	return 0;
 }

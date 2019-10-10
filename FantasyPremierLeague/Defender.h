@@ -17,6 +17,7 @@ public:
 
 	Defender();
 	Defender(string name);
+	//~Defender() { delete this->totalScore; }
 
 	void scoreGoal();
 	void makeAssist();

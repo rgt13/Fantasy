@@ -1,3 +1,13 @@
-﻿  main.cpp
-C:\Users\rgt21\c++\Fantasy\FantasyPremierLeague\main.cpp(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  FantasyPremierLeague.vcxproj -> C:\Users\rgt21\c++\Fantasy\Debug\FantasyPremierLeague.exe
+﻿  Defender.cpp
+  Forward.cpp
+  Goalkeeper.cpp
+  main.cpp
+  Midfielder.cpp
+  Player.cpp
+  Team.cpp
+C:\Users\rgt21\source\repos\FantasyPremierLeague\FantasyPremierLeague\Team.cpp(74,17): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\rgt21\source\repos\FantasyPremierLeague\FantasyPremierLeague\Team.cpp(80,17): warning C4018:  '<': signed/unsigned mismatch
+C:\Users\rgt21\source\repos\FantasyPremierLeague\FantasyPremierLeague\Team.cpp(86,17): warning C4018:  '<': signed/unsigned mismatch
+  Generating Code...
+C:\Users\rgt21\source\repos\FantasyPremierLeague\FantasyPremierLeague\Team.cpp(92,17): warning C4018:  '<': signed/unsigned mismatch
+  FantasyPremierLeague.vcxproj -> C:\Users\rgt21\source\repos\FantasyPremierLeague\Debug\FantasyPremierLeague.exe

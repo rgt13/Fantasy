@@ -17,7 +17,8 @@ public:
 	Team();
 	Team(string name) { this->teamName = name; }
 	Team(string name, int d, int m, int f, int g);
-	Team* createTeam();
+	~Team() { delete this; }
+	void createTeam();
 	void populateTeam();
 	void displayTeam();
 
@@ -25,6 +26,17 @@ public:
 	int getNumMids() { return numMids; }
 	int getNumDefenders() { return numDefenders; }
 	int getNumGoalkeepers() { return numGoalkeepers; }
+
+	void setNumForwards(int num);
+	void setNumMidfielders(int num);
+	void setNumDefenders(int num);
+	void setNumGoalkeepers(int num);
+
+	void setForwards(int numForwardsLeft, string chosenForwards);
+	void setMidfielders(int numMidsLeft, string chosenMids);
+	void setDefenders(int numDefendersLeft, string chosenDefenders);
+	void setGoalkeepers(int numGoalkeepersLeft, string chosenGoalkeepers);
+
 
 	string getTeamName() { return teamName; }
 
@@ -46,10 +58,18 @@ private:
 
 	string teamName;
 	
+	/*
 	Forward * forwards;
 	Midfielder * midfielders;
 	Defender * defenders;
 	Goalkeeper * goalkeepers;
+	*/
+
+	
+	vector<Forward> forwards;
+	vector<Midfielder> midfielders;
+	vector<Defender> defenders;
+	vector<Goalkeeper> goalkeepers;
 	
 
 	/*
@@ -58,5 +78,4 @@ private:
 	string * defenders;
 	string * goalkeepers;
 	*/
-	
 };

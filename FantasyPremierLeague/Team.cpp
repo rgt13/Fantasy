@@ -6,11 +6,6 @@ Team::Team() {
 	this->numMids = 0;
 	this->numDefenders = 0;
 	this->numGoalkeepers = 0;
-
-	this->forwards = new Forward[numForwards];
-	this->midfielders = new Midfielder[numMids];
-	this->defenders = new Defender[numDefenders];
-	this->goalkeepers = new Goalkeeper[numGoalkeepers];
 }
 
 Team::Team(string name, int d, int m, int f, int g) {
@@ -20,16 +15,11 @@ Team::Team(string name, int d, int m, int f, int g) {
 	this->numGoalkeepers = g;
 
 	this->teamName = name;
-	
-	this->forwards = new Forward[numForwards];
-	this->midfielders = new Midfielder[numMids];
-	this->defenders = new Defender[numDefenders];
-	this->goalkeepers = new Goalkeeper[numGoalkeepers];
 }
 
-Team* Team::createTeam()
+void Team::createTeam()
 {
-	int numDefs, numMid, numFors, numGKs;
+	int numDefs, numMid, numFors;
 
 	cout << "Enter the amount of desired defenders and press enter ->  ";
 	cin >> numDefs;
@@ -41,55 +31,31 @@ Team* Team::createTeam()
 	cin >> numFors;
 	cout << endl;
 
-	Team* team = new Team(this->getTeamName(), numDefs, numMid, numFors, 2);
-
-	cout << "Your team name is '" << this->teamName << "'\n\n";
-	return team;
+	this->setNumForwards(numFors);
+	this->setNumMidfielders(numMid);
+	this->setNumDefenders(numDefs);
+	this->setNumGoalkeepers(2);
 }
 
 void Team::populateTeam()
 {
-	cout << "Populating team" << endl << endl;
 	int numForwardsLeft = this->getNumForwards();
 	int numMidsLeft = this->getNumMids();
 	int numDefendersLeft = this->getNumDefenders();
 	int numGoalkeepersLeft = this->getNumGoalkeepers();
 
-	cout << "Select the defenders for your squad and press enter: ";
-	while (numDefendersLeft >= 0) {
-		string chosenDefenders;
-		getline(cin, chosenDefenders, '\n'); 
-		Defender d(chosenDefenders);
-		this->defenders[numDefendersLeft] = d;
-		numDefendersLeft--;
-	}
+	string chosenDefenders;
+	string chosenMids;
+	string chosenForwards;
+	string chosenGoalkeepers;
 
-	cout << "Select the midfielders for your squad and press enter: ";
-	while (numMidsLeft > 0) {
-		string chosenMids;
-		getline(cin, chosenMids);
-		Midfielder m(chosenMids);
-		this->midfielders[numMidsLeft-1] = m;
-		numMidsLeft--;
-	}
+	this->setDefenders(numDefendersLeft, chosenDefenders);
 
-	cout << "Select the forwards for your squad and press enter: ";
-	while (numForwardsLeft > 0) {
-		string chosenForwards;
-		getline(cin, chosenForwards);
-		Forward f(chosenForwards);
-		this->forwards[numForwardsLeft-1] = f;
-		numForwardsLeft--;
-	}
+	this->setMidfielders(numMidsLeft, chosenMids);
 
-	cout << "Select the goalkeepers for your squad and press enter: ";
-	while (numGoalkeepersLeft > 0) {
-		string chosenGoalkeepers;
-		getline(cin, chosenGoalkeepers);
-		Goalkeeper g(chosenGoalkeepers);
-		this->goalkeepers[numGoalkeepersLeft - 1] = g;
-		numGoalkeepersLeft--;
-	}
+	this->setForwards(numForwardsLeft, chosenForwards);
+
+	this->setGoalkeepers(numGoalkeepersLeft, chosenGoalkeepers);
 }
 
 void Team::displayTeam()
@@ -101,30 +67,91 @@ void Team::displayTeam()
 
 	else 
 	{
-		cout << "Here are your defenders: \n\n";
+		cout << "Here are your defenders: \n";
 
 		int i;
 
-		for (i = this->getNumDefenders() - 1; i >= 0; i--) {
+		for (i = 0; i < this->defenders.size(); i++) {
 			this->defenders[i].showPlayerName();
 		}
 
 		cout << "\nHere are your midfielders: \n\n";
 
-		for (i = this->getNumMids() - 1; i >= 0; i--) {
+		for (i = 0; i < this->midfielders.size(); i++) {
 			this->midfielders[i].showPlayerName();
 		}
 
 		cout << "\nHere are your midfielders: \n\n";
 
-		for (i = this->getNumForwards() - 1; i >= 0; i--) {
+		for (i = 0; i < this->forwards.size(); i++) {
 			this->forwards[i].showPlayerName();
 		}
 
 		cout << "\nHere are your goalkeepers: \n\n";
 
-		for (i = 1; i >= 0; i--) {
+		for (i = 0; i < this->goalkeepers.size(); i++) {
 			this->goalkeepers[i].showPlayerName();
 		}
+	}
+}
+
+void Team::setNumForwards(int num)
+{
+	this->numForwards = num;
+}
+
+void Team::setNumMidfielders(int num)
+{
+	this->numMids = num;
+}
+
+void Team::setNumDefenders(int num)
+{
+	this->numDefenders = num;
+}
+
+void Team::setNumGoalkeepers(int num)
+{
+	this->numGoalkeepers = num;
+}
+
+void Team::setForwards(int numForwardsLeft, string chosenForwards)
+{
+	cout << "Select the forwards for your squad and press enter: ";
+	for (int i = 0; i < numForwardsLeft; i++) {
+		getline(cin, chosenForwards);
+		Forward f(chosenForwards);
+		this->forwards.push_back(f);
+	}
+}
+
+void Team::setMidfielders(int numMidsLeft, string chosenMids)
+{
+	cout << "Select the midfielders for your squad and press enter: ";
+	for(int i = 0; i < numMidsLeft; i++) {
+		int midIndex = 0;
+		getline(cin, chosenMids);
+		Midfielder m(chosenMids);
+		this->midfielders.push_back(m);
+	}
+}
+
+void Team::setDefenders(int numDefendersLeft, string chosenDefenders)
+{
+	cout << "Select the defenders for your squad and press enter: ";
+	for(int i = 0; i < numDefendersLeft+1; i++) {
+		getline(cin, chosenDefenders, '\n');
+		Defender d(chosenDefenders);
+		this->defenders.push_back(d);
+	}
+}
+
+void Team::setGoalkeepers(int numGoalkeepersLeft, string chosenGoalkeepers)
+{
+	cout << "Select the goalkeepers for your squad and press enter: ";
+	for(int i = 0; i < 2; i++) {
+		getline(cin, chosenGoalkeepers);
+		Goalkeeper g(chosenGoalkeepers);
+		this->goalkeepers.push_back(g);
 	}
 }

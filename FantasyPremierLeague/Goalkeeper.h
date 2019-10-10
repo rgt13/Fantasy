@@ -11,6 +11,7 @@ public:
 
 	Goalkeeper();
 	Goalkeeper(string name);
+	//~Goalkeeper() { delete this; }
 
 	void scoreGoal();
 	void makeAssist();
