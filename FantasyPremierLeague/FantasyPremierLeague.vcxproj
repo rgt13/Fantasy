@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClInclude Include="Defender.h" />
     <ClInclude Include="Fantasy.h" />
+    <ClInclude Include="FantasyMenu.h" />
     <ClInclude Include="Forward.h" />
     <ClInclude Include="Goalkeeper.h" />
     <ClInclude Include="Midfielder.h" />
@@ -133,6 +134,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Defender.cpp" />
+    <ClCompile Include="FantasyMenu.cpp" />
     <ClCompile Include="Forward.cpp" />
     <ClCompile Include="Goalkeeper.cpp" />
     <ClCompile Include="main.cpp" />

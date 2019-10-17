@@ -1,4 +1,6 @@
 #include "Team.h"
+#include <iomanip>
+using namespace std;
 
 
 Team::Team() {
@@ -24,17 +26,17 @@ void Team::createTeam()
 	cout << "Enter the amount of desired defenders and press enter ->  ";
 	cin >> numDefs;
 	
-	cout << "\nEnter the amount of desired midfielders and press enter ->  ";
+	cout << "\n\nEnter the amount of desired midfielders and press enter ->  ";
 	cin >> numMid;
 
-	cout << "\nEnter the amount of desired forwards and press enter ->  ";
+	cout << "\n\nEnter the amount of desired forwards and press enter ->  ";
 	cin >> numFors;
 	cout << endl;
 
 	this->setNumForwards(numFors);
 	this->setNumMidfielders(numMid);
 	this->setNumDefenders(numDefs);
-	this->setNumGoalkeepers(2);
+	this->setNumGoalkeepers(3);
 }
 
 void Team::populateTeam()
@@ -67,29 +69,28 @@ void Team::displayTeam()
 
 	else 
 	{
-		cout << "Here are your defenders: \n";
+		cout << "Here are your defenders:";
+		cout << "\tHere are your midfielders: ";
+		cout << "\ttHere are your forwards: ";
+		cout << "\tHere are your goalkeepers: \n";
 
-		int i;
 
-		for (i = 0; i < this->defenders.size(); i++) {
-			this->defenders[i].showPlayerName();
-		}
+		
+		cout << "========================";
+		cout << "\t==========================";
+		cout << "\t==========================";
+		cout << "\t==========================\n";
+		
+		int i, size = findMaxSectionSize();
 
-		cout << "\nHere are your midfielders: \n\n";
+		for (i = 0; i < size; i++) {
+			if (i >= 1)
+			{
+				this->defenders[i].showPlayerName();
+			}
 
-		for (i = 0; i < this->midfielders.size(); i++) {
 			this->midfielders[i].showPlayerName();
-		}
-
-		cout << "\nHere are your midfielders: \n\n";
-
-		for (i = 0; i < this->forwards.size(); i++) {
 			this->forwards[i].showPlayerName();
-		}
-
-		cout << "\nHere are your goalkeepers: \n\n";
-
-		for (i = 0; i < this->goalkeepers.size(); i++) {
 			this->goalkeepers[i].showPlayerName();
 		}
 	}
