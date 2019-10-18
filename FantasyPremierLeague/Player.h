@@ -5,6 +5,7 @@
 #include <cmath>
 #include "Fantasy.h"
 #include "Team.h"
+//#include "FantasyMenu.h"
 
 using namespace std;
 
@@ -24,11 +25,9 @@ public:
 		cout << "Your team name is '" << teamName << "'\n\n";
 	}
 
-	//~Player() { delete this; }
-
 	void showTotalScore();
 
-	void createTeam()   { this->team->createTeam(); }
+	void createTeam()   { this->team->createTeam(); this->isTeamCreated = true; }
 	void populateTeam() { this->team->populateTeam(); }
 	void displayTeam()  { this->team->displayTeam(); }
 
@@ -36,6 +35,8 @@ public:
 	int getNumMids()			{ return this->team->getNumMids(); }
 	int getNumDefenders()		{ return this->team->getNumDefenders(); }
 	int getNumGoalkeepers()		{ return this->team->getNumGoalkeepers(); }
+
+	bool getIsTeamCreated()		{ return this->isTeamCreated; }
 
 	bool isEmpty() {
 		if (this->getNumForwards() == 0 && 
@@ -54,4 +55,5 @@ private:
 	double totalFantasyScore;
 	string teamName;
 	Team* team;
+	bool isTeamCreated;
 };

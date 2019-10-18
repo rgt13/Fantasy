@@ -9,16 +9,20 @@
 #include "Goalkeeper.h"
 #include "Team.h"
 #include "Player.h"	
+//#include "FantasyMenu.h"
 
 using namespace std;
 
 int main()
 {
-	Player p("FekirWrightInDebuchy");
+	//Player p("FekirWrightInDebuchy");
+	
+	Forward sadioMane("Sadio Mane");
 
-	p.createTeam();
-	p.populateTeam();
-	p.displayTeam();
+	sadioMane.scoreGoal();
+	sadioMane.makeSuccessfulDribble();
+
+
 
 	return 0;
 }
