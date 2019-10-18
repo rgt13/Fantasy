@@ -20,7 +20,7 @@ public:
 	void makeEffectiveClearance();
 	void cleanSheet();
 
-	void showPlayerName() { cout << playerName << endl; }
+	void showPlayerName() { cout << setw(60) << " - " << playerName; }
 
 private:
 	double totalScore;

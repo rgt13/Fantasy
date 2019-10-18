@@ -37,6 +37,16 @@ public:
 	void setDefenders(int numDefendersLeft, string chosenDefenders);
 	void setGoalkeepers(int numGoalkeepersLeft, string chosenGoalkeepers);
 
+	int findMaxSectionSize()
+	{
+		if (getNumMids() > getNumDefenders()) {
+			return this->getNumMids();
+		}
+		else if (getNumDefenders() > getNumMids()) {
+			return this->getNumDefenders();
+		}
+	}
+
 
 	string getTeamName() { return teamName; }
 

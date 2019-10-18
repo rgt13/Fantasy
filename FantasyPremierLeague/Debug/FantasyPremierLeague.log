@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 ﻿  Defender.cpp
   FantasyMenu.cpp
+=======
+﻿  FantasyMenu.cpp
+>>>>>>> b4ea1039345b61c645280bad10f0e3c83319ceed
   Forward.cpp
   Goalkeeper.cpp
   Midfielder.cpp
   Player.cpp
   Team.cpp
+<<<<<<< HEAD
 C:\Users\rgt21\c++\Fantasy\FantasyPremierLeague\Team.cpp(74,17): warning C4018: '<': signed/unsigned mismatch
 C:\Users\rgt21\c++\Fantasy\FantasyPremierLeague\Team.cpp(80,17): warning C4018: '<': signed/unsigned mismatch
 C:\Users\rgt21\c++\Fantasy\FantasyPremierLeague\Team.cpp(86,17): warning C4018: '<': signed/unsigned mismatch
@@ -12,3 +17,9 @@ C:\Users\rgt21\c++\Fantasy\FantasyPremierLeague\Team.cpp(86,17): warning C4018: 
   Generating Code...
 C:\Users\rgt21\c++\Fantasy\FantasyPremierLeague\Team.cpp(92,17): warning C4018: '<': signed/unsigned mismatch
   FantasyPremierLeague.vcxproj -> C:\Users\rgt21\c++\Fantasy\Debug\FantasyPremierLeague.exe
+=======
+  main.cpp
+  Generating Code...
+C:\Users\rgt21\source\repos\FantasyPremierLeague\FantasyPremierLeague\Team.h(48): warning C4715:  'Team::findMaxSectionSize': not all control paths return a value
+  FantasyPremierLeague.vcxproj -> C:\Users\rgt21\source\repos\FantasyPremierLeague\Debug\FantasyPremierLeague.exe
+>>>>>>> b4ea1039345b61c645280bad10f0e3c83319ceed

@@ -9,12 +9,17 @@
 #include "Goalkeeper.h"
 #include "Team.h"
 #include "Player.h"	
+<<<<<<< HEAD
 //#include "FantasyMenu.h"
+=======
+#include "FantasyMenu.h"
+>>>>>>> b4ea1039345b61c645280bad10f0e3c83319ceed
 
 using namespace std;
 
 int main()
 {
+<<<<<<< HEAD
 	//Player p("FekirWrightInDebuchy");
 	
 	Forward sadioMane("Sadio Mane");
@@ -23,6 +28,11 @@ int main()
 	sadioMane.makeSuccessfulDribble();
 
 
+=======
+	FantasyMenu * menu = new FantasyMenu();
+
+	menu->displayMenu();
+>>>>>>> b4ea1039345b61c645280bad10f0e3c83319ceed
 
 	return 0;
 }
